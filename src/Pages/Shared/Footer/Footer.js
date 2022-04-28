@@ -4,11 +4,11 @@ const Footer = () => {
 	const date = new Date();
 	const year = date.getFullYear();
 	return (
-		<div>
-			<p>
+		<footer>
+			<p className="text-center">
 				<small>Copyright &copy; by Warehouse Management - {year}</small>
 			</p>
-		</div>
+		</footer>
 	);
 };
 
