@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name" : "Mango",
+        "price": 29,
+        "quote" : "This is fruits short description here...",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+    },
+    {
+        "_id": 2,
+        "name" : "Banana",
+        "price": 29,
+        "quote" : "This is fruits short description here...",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+    },
+    {
+        "_id": 3,
+        "name" : "Apple",
+        "price": 29,
+        "quote" : "This is fruits short description here...",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+    },
+    {
+        "_id": 4,
+        "name" : "Orange",
+        "price": 29,
+        "quote" : "This is fruits short description here...",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+    },
+    {
+        "_id": 5,
+        "name" : "Painaple",
+        "price": 29,
+        "quote" : "This is fruits short description here...",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+    },
+    {
+        "_id": 6,
+        "name" : "Jackfruit",
+        "price": 29,
+        "quote" : "This is fruits short description here...",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+    }
+]
