@@ -7,6 +7,7 @@ import SignUp from "./Pages/SingUp/SignUp";
 import SignIn from "./Pages/SignIn/SignIn";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ManageInventories from "./Pages/ManageInventories/ManageInventories";
 import Inventory from "./Pages/Inventory/Inventory";
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
 				<Route path="/" element={<Home />}></Route>
 				<Route path="/home" element={<Home />}></Route>
 				<Route path="/inventory" element={<Inventory />}></Route>
+				<Route
+					path="/manage-inventories"
+					element={<ManageInventories />}
+				></Route>
 				<Route path="/sign-in" element={<SignIn />}></Route>
 				<Route path="/sign-up" element={<SignUp />}></Route>
 			</Routes>

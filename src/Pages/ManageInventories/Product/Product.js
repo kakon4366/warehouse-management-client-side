@@ -1,7 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-	const { name, price, quote, stock, suppliername, img } = product;
+	const { _id, name, price, quote, stock, suppliername, img } = product;
+
+	const navigate = useNavigate();
+
 	return (
 		<div className="border-2 rounded-md">
 			<img className="rounded-t-md" width="100%" src={img} alt={name} />
@@ -20,7 +24,10 @@ const Product = ({ product }) => {
 							Supplier Name: <span>({suppliername})</span>
 						</p>
 					</div>
-					<button className="bg-orange-400 hover:bg-orange-600 transition-all px-6 text-white rounded">
+					<button
+						onClick={() => navigate(`/inventory/${_id}`)}
+						className="bg-orange-400 hover:bg-orange-600 transition-all px-6 text-white rounded"
+					>
 						Stock Update
 					</button>
 				</div>
