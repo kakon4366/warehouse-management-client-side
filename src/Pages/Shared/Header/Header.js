@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { MenuAlt3Icon } from "@heroicons/react/solid";
 import CustomLink from "../CustomLink/CustomLink";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
 	const [showMenu, setShowMenu] = useState(false);
+
+	const [user, loading, error] = useAuthState(auth);
+
 	return (
 		<header className="bg-green-600 py-5">
 			<div className="container mx-auto">
@@ -30,12 +36,20 @@ const Header = () => {
 						<CustomLink className="ml-12" to="/manage-inventories">
 							Manage Inventories
 						</CustomLink>
-						<CustomLink className="ml-12" to="/sign-in">
-							Sign In
-						</CustomLink>
-						<CustomLink className="ml-12" to="/sign-up">
-							Sign Up
-						</CustomLink>
+						{user ? (
+							<button onClick={() => signOut(auth)} className="ml-12">
+								Logout
+							</button>
+						) : (
+							<>
+								<CustomLink className="ml-12" to="/sign-in">
+									Sign In
+								</CustomLink>
+								<CustomLink className="ml-12" to="/sign-up">
+									Sign Up
+								</CustomLink>
+							</>
+						)}
 					</ul>
 				</nav>
 			</div>
