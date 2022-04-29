@@ -1,22 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import SocialSignIn from "../Shared/SocialSignIn/SocialSignIn";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+	useCreateUserWithEmailAndPassword,
+	useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-	const [createUserWithEmailAndPassword, user, loading, error] =
+	const [passwordError, setPasswordError] = useState("");
+	const [createUserWithEmailAndPassword, loading, error] =
 		useCreateUserWithEmailAndPassword(auth);
+	const [updateProfile] = useUpdateProfile(auth);
 
-	const handleSignUp = (e) => {
+	const navigate = useNavigate();
+
+	const handleSignUp = async (e) => {
 		e.preventDefault();
 		const name = e.target.name.value;
 		const email = e.target.email.value;
 		const password = e.target.password.value;
 		const confirmPassword = e.target.confirmPassword.value;
 
-		if (password === confirmPassword) {
-			createUserWithEmailAndPassword(email, password);
+		if (password !== confirmPassword) {
+			setPasswordError("Confirm password will be not match!");
+			return;
 		}
+		await createUserWithEmailAndPassword(email, password);
+		await updateProfile({ displayName: name });
+		toast.success("Sign Up Success!");
+		setPasswordError("");
+		e.target.reset();
+		navigate("/sign-in");
 	};
 
 	return (
@@ -39,24 +55,27 @@ const SignUp = () => {
 									type="text"
 									name="name"
 									placeholder="Name"
+									required
 								/>
 							</div>
 							<div className="flex flex-col text-lg mb-3">
 								<label htmlFor="email">Email Address</label>
 								<input
 									className="border py-1 px-2 mt-1"
-									type="text"
+									type="email"
 									name="email"
 									placeholder="Eamil Address"
+									required
 								/>
 							</div>
 							<div className="flex flex-col text-lg mb-3">
 								<label htmlFor="password">Password</label>
 								<input
 									className="border py-1 px-2 mt-1"
-									type="text"
+									type="password"
 									name="password"
 									placeholder="Password"
+									required
 								/>
 							</div>
 							<div className="flex flex-col text-lg mb-3">
@@ -65,15 +84,20 @@ const SignUp = () => {
 								</label>
 								<input
 									className="border py-1 px-2 mt-1"
-									type="text"
+									type="password"
 									name="confirmPassword"
 									placeholder="Confirm Password"
+									required
 								/>
 							</div>
+							<small className="text-red-500">{passwordError}</small>
+							<small className="text-red-500">
+								{error ? error.message : ""}
+							</small>
 							<input
 								className="bg-orange-500 hover:bg-orange-600 transition-all cursor-pointer w-full text-white py-2 rounded mt-4"
 								type="submit"
-								value="Sing Up"
+								value={loading ? "Loading..." : "Sign Up"}
 							/>
 						</form>
 						<SocialSignIn></SocialSignIn>
