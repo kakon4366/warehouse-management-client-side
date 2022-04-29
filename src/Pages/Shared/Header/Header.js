@@ -30,10 +30,10 @@ const Header = () => {
 						<CustomLink className="ml-12" to="/manage-inventories">
 							Manage Inventories
 						</CustomLink>
-						<CustomLink className="ml-12" to="/sing-in">
+						<CustomLink className="ml-12" to="/sign-in">
 							Sign In
 						</CustomLink>
-						<CustomLink className="ml-12" to="/sing-up">
+						<CustomLink className="ml-12" to="/sign-up">
 							Sign Up
 						</CustomLink>
 					</ul>
