@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { MenuAlt3Icon } from "@heroicons/react/solid";
+import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -20,22 +20,22 @@ const Header = () => {
 						</MenuAlt3Icon>
 					</div>
 					<ul
-						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-yellow-600 lg:bg-transparent left-0 w-full lg:w-auto top-16 text-center lg:block z-50 ${
+						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-yellow-600 lg:bg-transparent left-0 w-full lg:w-auto top-16 text-center lg:flex lg:block z-50 ${
 							showMenu ? "" : "hidden"
 						}`}
 					>
-						<Link className="ml-12" to="/home">
+						<CustomLink className="ml-12" to="/home">
 							Home
-						</Link>
-						<Link className="ml-12" to="/manage-inventories">
+						</CustomLink>
+						<CustomLink className="ml-12" to="/manage-inventories">
 							Manage Inventories
-						</Link>
-						<Link className="ml-12" to="/sing-in">
+						</CustomLink>
+						<CustomLink className="ml-12" to="/sing-in">
 							Sign In
-						</Link>
-						<Link className="ml-12" to="/sing-up">
+						</CustomLink>
+						<CustomLink className="ml-12" to="/sing-up">
 							Sign Up
-						</Link>
+						</CustomLink>
 					</ul>
 				</nav>
 			</div>
