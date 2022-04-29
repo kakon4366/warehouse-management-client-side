@@ -13,14 +13,14 @@ const Header = () => {
 					</div>
 					<div className="lg:hidden">
 						<MenuAlt3Icon
-							class="h-6 w-6 "
+							className="h-6 w-6 "
 							onClick={() => setShowMenu(!showMenu)}
 						>
 							Menu
 						</MenuAlt3Icon>
 					</div>
 					<ul
-						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-yellow-600 lg:bg-transparent left-0 w-full lg:w-auto top-16 text-center lg:block ${
+						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-yellow-600 lg:bg-transparent left-0 w-full lg:w-auto top-16 text-center lg:block z-50 ${
 							showMenu ? "" : "hidden"
 						}`}
 					>
