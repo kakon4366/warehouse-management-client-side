@@ -1,13 +1,34 @@
 import React from "react";
 import SocialSignIn from "../Shared/SocialSignIn/SocialSignIn";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const SignUp = () => {
+	const [createUserWithEmailAndPassword, user, loading, error] =
+		useCreateUserWithEmailAndPassword(auth);
+
+	const handleSignUp = (e) => {
+		e.preventDefault();
+		const name = e.target.name.value;
+		const email = e.target.email.value;
+		const password = e.target.password.value;
+		const confirmPassword = e.target.confirmPassword.value;
+
+		if (password === confirmPassword) {
+			createUserWithEmailAndPassword(email, password);
+		}
+	};
+
 	return (
 		<section className="py-20">
 			<div className="container mx-auto">
 				<div className="flex justify-center items-center w-full">
 					<div className="w-[300px] ">
-						<form action="" className="bg-orange-100 p-4 rounded">
+						<form
+							onSubmit={handleSignUp}
+							action=""
+							className="bg-orange-100 p-4 rounded"
+						>
 							<h3 className="text-2xl text-center font-semibold">
 								Sing Up
 							</h3>
