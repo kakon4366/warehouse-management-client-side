@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product/Product";
 
-const ManageInventories = () => {
+const Inventory = () => {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
@@ -24,4 +24,4 @@ const ManageInventories = () => {
 	);
 };
 
-export default ManageInventories;
+export default Inventory;

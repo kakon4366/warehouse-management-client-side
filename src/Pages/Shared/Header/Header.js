@@ -8,7 +8,7 @@ import { signOut } from "firebase/auth";
 const Header = () => {
 	const [showMenu, setShowMenu] = useState(false);
 
-	const [user, loading, error] = useAuthState(auth);
+	const [user] = useAuthState(auth);
 
 	return (
 		<header className="bg-green-600 py-5">
@@ -33,8 +33,8 @@ const Header = () => {
 						<CustomLink className="ml-12" to="/home">
 							Home
 						</CustomLink>
-						<CustomLink className="ml-12" to="/manage-inventories">
-							Manage Inventories
+						<CustomLink className="ml-12" to="/inventory">
+							Inventory
 						</CustomLink>
 						{user ? (
 							<button onClick={() => signOut(auth)} className="ml-12">
