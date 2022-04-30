@@ -18,7 +18,10 @@ const Product = ({ product }) => {
 				<div className="flex justify-between">
 					<div className="italic text-slate-600">
 						<p className="text-sm mt-4">
-							Stock: <span>{stock}</span>
+							Stock:{" "}
+							<span>
+								{stock <= 0 ? "Product stock not avilable." : stock}
+							</span>
 						</p>
 						<p className="text-sm">
 							Supplier Name: <span>({suppliername})</span>

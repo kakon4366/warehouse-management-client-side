@@ -19,6 +19,10 @@ const Inventory = () => {
 	const handleDelivered = () => {
 		const deliveredProduct = stock - 1;
 
+		if (deliveredProduct <= 0) {
+			return toast.error("Product stock not available!");
+		}
+
 		const updateProduct = { stock: deliveredProduct };
 		const url = `http://localhost:5000/delivered/${productId}`;
 		fetch(url, {
@@ -31,7 +35,7 @@ const Inventory = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				setUpdateStock(!updateStock);
-				toast.success("Product Delivered Success!");
+				toast.success(data.message);
 			});
 	};
 
@@ -53,8 +57,12 @@ const Inventory = () => {
 							<h4 className="text-2xl my-4">
 								Price: $<span>{price}</span>
 							</h4>
-							<p className="text-sm">Stock: {stock}</p>
-							<p className="text-sm">Supplier Name: {suppliername}</p>
+							<p className="text-sm italic">
+								{stock <= 0 ? "Product stock not avilable." : stock}
+							</p>
+							<p className="text-sm italic">
+								Supplier Name: {suppliername}
+							</p>
 							<button
 								onClick={handleDelivered}
 								className="bg-orange-400 hover:bg-orange-600 transition-all py-2 px-6 text-white rounded uppercase font-semibold mt-6"
