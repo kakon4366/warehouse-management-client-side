@@ -42,14 +42,10 @@ const Inventory = () => {
 	return (
 		<section className="py-20">
 			<div className="container mx-auto">
-				<div className="grid grid-cols-2">
-					<div className="border bg-orange-100 flex rounded-l-lg">
-						<div>
-							<img
-								className="border-l-8 rounded-l-lg border-orange-600"
-								src={img}
-								alt=""
-							/>
+				<div className="grid lg:grid-cols-3 gap-12">
+					<div className="border bg-orange-100 lg:col-span-2 md:flex rounded-l-lg">
+						<div className="md:border-l-8 md:rounded-l-lg md:border-orange-600">
+							<img src={img} alt="" width="100%" />
 						</div>
 						<div className="ml-4 my-6">
 							<h2 className="text-3xl mb-2 font-semibold">{name}</h2>
@@ -58,7 +54,10 @@ const Inventory = () => {
 								Price: $<span>{price}</span>
 							</h4>
 							<p className="text-sm italic">
-								{stock <= 0 ? "Product stock not avilable." : stock}
+								Stock:{" "}
+								<span>
+									{stock <= 0 ? "Product stock not avilable." : stock}
+								</span>
 							</p>
 							<p className="text-sm italic">
 								Supplier Name: {suppliername}
@@ -71,8 +70,23 @@ const Inventory = () => {
 							</button>
 						</div>
 					</div>
-					<div>
-						<h2>Other content</h2>
+					<div className="bg-yellow-100 p-8 w-full">
+						<h2 className="text-3xl text-center mb-4">
+							Restock the items
+						</h2>
+						<hr />
+						<form className="flex flex-col items-center mt-8" action="">
+							<input
+								type="number"
+								placeholder="Stock Count"
+								className="w-full border border-orange-300 py-2 px-4 text-lg"
+							/>
+							<input
+								className="bg-green-500 hover:bg-green-600 transition-all py-2 px-6 w-full text-white rounded uppercase font-semibold mt-6 cursor-pointer"
+								type="submit"
+								value="Add Stock"
+							/>
+						</form>
 					</div>
 				</div>
 			</div>
