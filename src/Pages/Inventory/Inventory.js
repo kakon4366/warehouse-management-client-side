@@ -13,7 +13,7 @@ const Inventory = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="border">
 			<h2>This is Inventory Page {product.name}</h2>
 		</div>
 	);

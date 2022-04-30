@@ -6,13 +6,9 @@ import google from "../../../Images/google.png";
 import "./SocialSignIn.css";
 
 const SocialSignIn = () => {
-	const [signInWithGoogle, user] = useSignInWithGoogle(auth);
+	const [signInWithGoogle] = useSignInWithGoogle(auth);
 
 	const navigate = useNavigate();
-
-	if (user) {
-		navigate("/home");
-	}
 
 	return (
 		<div className="mt-2">
@@ -20,7 +16,10 @@ const SocialSignIn = () => {
 				<span className="text-center relative px-2 bg-white z-30">or</span>
 			</div>
 			<button
-				onClick={() => signInWithGoogle()}
+				onClick={async () => {
+					await signInWithGoogle();
+					navigate("/home");
+				}}
 				className="text-lg flex items-center justify-center border w-full py-2 font-semibold border-orange-500 rounded"
 			>
 				<img width="30px" src={google} alt="" />
