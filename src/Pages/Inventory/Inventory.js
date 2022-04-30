@@ -16,6 +16,7 @@ const Inventory = () => {
 			.then((data) => setProduct(data));
 	}, [updateStock]);
 
+	//delivered product
 	const handleDelivered = () => {
 		const deliveredProduct = stock - 1;
 
@@ -36,6 +37,33 @@ const Inventory = () => {
 			.then((data) => {
 				setUpdateStock(!updateStock);
 				toast.success(data.message);
+			});
+	};
+
+	//stock product
+	const handleAddStockProduct = (e) => {
+		e.preventDefault();
+		const stockCount = e.target.stockCount.value;
+
+		const addStockCount = parseInt(stock) + parseInt(stockCount);
+
+		console.log(addStockCount);
+
+		const updateProduct = { stock: addStockCount };
+
+		const url = `http://localhost:5000/addstock/${productId}`;
+		fetch(url, {
+			method: "PUT",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(updateProduct),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				setUpdateStock(!updateStock);
+				toast.success(data.message);
+				e.target.reset();
 			});
 	};
 
@@ -75,8 +103,13 @@ const Inventory = () => {
 							Restock the items
 						</h2>
 						<hr />
-						<form className="flex flex-col items-center mt-8" action="">
+						<form
+							onSubmit={handleAddStockProduct}
+							className="flex flex-col items-center mt-8"
+							action=""
+						>
 							<input
+								name="stockCount"
 								type="number"
 								placeholder="Stock Count"
 								className="w-full border border-orange-300 py-2 px-4 text-lg"
