@@ -21,7 +21,7 @@ const ManageInventory = () => {
 						Add New Item{" "}
 					</button>
 				</div>
-				<div className="mt-8">
+				<div className="mt-8 overflow-x-auto">
 					<table className="manage-table">
 						<thead>
 							<tr>

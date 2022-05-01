@@ -23,9 +23,9 @@ const AddItem = () => {
 
 	return (
 		<section className="py-20">
-			<div className="container mx-auto">
+			<div className="container mx-auto px-2">
 				<h3 className="text-3xl text-center">Add New Item</h3>
-				<div className="text-center w-1/2 mx-auto mt-8">
+				<div className="text-center md:w-3/4 lg:w-1/2 mx-auto mt-8">
 					<form
 						className="flex flex-col"
 						onSubmit={handleSubmit(onSubmit)}
