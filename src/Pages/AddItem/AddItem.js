@@ -33,27 +33,32 @@ const AddItem = () => {
 						<input
 							className="mb-3 p-2 rounded border-orange-200 border"
 							placeholder="Product Name"
-							{...register("productName", { required: true })}
+							{...register("name", { required: true })}
 						/>
 						<input
 							className="mb-3 p-2 rounded border-orange-200 border"
 							placeholder="Product Price"
-							{...register("productPrice", { required: true })}
+							{...register("price", { required: true })}
 						/>
 						<input
 							className="mb-3 p-2 rounded border-orange-200 border"
 							placeholder="Stock"
-							{...register("productStock", { required: true })}
+							{...register("stock", { required: true })}
 						/>
 						<input
 							className="mb-3 p-2 rounded border-orange-200 border"
 							placeholder="Supplier Name"
-							{...register("supplierName", { required: true })}
+							{...register("suppliername", { required: true })}
+						/>
+						<input
+							className="mb-3 p-2 rounded border-orange-200 border"
+							placeholder="Product Image"
+							{...register("img", { required: true })}
 						/>
 						<textarea
 							className="mb-3 p-2 rounded border-orange-200 border"
 							placeholder="Short Description"
-							{...register("productDescription", { required: true })}
+							{...register("quote", { required: true })}
 						/>
 
 						<input

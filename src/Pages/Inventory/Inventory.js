@@ -20,7 +20,7 @@ const Inventory = () => {
 	const handleDelivered = () => {
 		const deliveredProduct = stock - 1;
 
-		if (deliveredProduct <= 0) {
+		if (deliveredProduct < 0) {
 			return toast.error("Product stock not available!");
 		}
 
