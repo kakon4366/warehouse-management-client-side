@@ -2,7 +2,6 @@ import React from "react";
 import Slider from "../Slider/Slider";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import { useNavigate } from "react-router-dom";
-import Inventories from "../../Inventories/Inventories/Inventories";
 import useProducts from "../../../Hooks/useProducts";
 import Product from "../../Inventories/Product/Product";
 

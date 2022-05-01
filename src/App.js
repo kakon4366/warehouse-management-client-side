@@ -11,6 +11,8 @@ import Inventory from "./Pages/Inventory/Inventory";
 import Inventories from "./Pages/Inventories/Inventories/Inventories";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 import AddItem from "./Pages/AddItem/AddItem";
+import MyItems from "./Pages/MyItems/MyItems";
+import NotFound404 from "./Pages/Shared/NotFound404/NotFound404";
 
 function App() {
 	return (
@@ -26,8 +28,10 @@ function App() {
 					element={<ManageInventory />}
 				></Route>
 				<Route path="/add-item" element={<AddItem />}></Route>
+				<Route path="/my-items" element={<MyItems />}></Route>
 				<Route path="/sign-in" element={<SignIn />}></Route>
 				<Route path="/sign-up" element={<SignUp />}></Route>
+				<Route path="*" element={<NotFound404 />}></Route>
 			</Routes>
 			<Footer></Footer>
 			<ToastContainer></ToastContainer>

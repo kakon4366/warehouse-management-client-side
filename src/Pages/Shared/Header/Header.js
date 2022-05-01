@@ -42,6 +42,9 @@ const Header = () => {
 						<CustomLink className="ml-12" to="/add-item">
 							Add Item
 						</CustomLink>
+						<CustomLink className="ml-12" to="/my-items">
+							My Items
+						</CustomLink>
 						{user ? (
 							<button onClick={() => signOut(auth)} className="ml-12">
 								Logout
