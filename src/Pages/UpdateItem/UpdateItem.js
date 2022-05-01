@@ -28,7 +28,7 @@ const UpdateItem = () => {
 			!data.suppliername ||
 			!data.quote
 		) {
-			return toast.error("Please Provide All Fields!");
+			return toast.error("Please touch all fields!");
 		}
 		const url = `http://localhost:5000/product/${productId}`;
 		fetch(url, {
