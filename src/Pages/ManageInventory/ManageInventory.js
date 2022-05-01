@@ -18,7 +18,7 @@ const ManageInventory = () => {
 	return (
 		<section className="py-20">
 			<div className="container mx-auto">
-				<h2 className="text-3xl text-center">Manage Inventory</h2>
+				<h2 className="text-3xl text-center">Manage Items</h2>
 				<div className="text-center mt-4">
 					<button
 						onClick={() => navigate("/add-item")}

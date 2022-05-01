@@ -13,6 +13,7 @@ import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 import AddItem from "./Pages/AddItem/AddItem";
 import MyItems from "./Pages/MyItems/MyItems";
 import NotFound404 from "./Pages/Shared/NotFound404/NotFound404";
+import UpdateItem from "./Pages/UpdateItem/UpdateItem";
 
 function App() {
 	return (
@@ -22,11 +23,12 @@ function App() {
 				<Route path="/" element={<Home />}></Route>
 				<Route path="/home" element={<Home />}></Route>
 				<Route path="/inventory/:productId" element={<Inventory />}></Route>
-				<Route path="/inventories" element={<Inventories />}></Route>
 				<Route
-					path="/manage-inventory"
-					element={<ManageInventory />}
+					path="/update-item/:productId"
+					element={<UpdateItem />}
 				></Route>
+				<Route path="/inventories" element={<Inventories />}></Route>
+				<Route path="/manage-items" element={<ManageInventory />}></Route>
 				<Route path="/add-item" element={<AddItem />}></Route>
 				<Route path="/my-items" element={<MyItems />}></Route>
 				<Route path="/sign-in" element={<SignIn />}></Route>

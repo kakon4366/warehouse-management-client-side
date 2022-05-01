@@ -2,6 +2,7 @@ import React from "react";
 import { TrashIcon } from "@heroicons/react/outline";
 import { PencilIcon } from "@heroicons/react/solid";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const ProductDataTable = ({
 	product,
@@ -11,11 +12,26 @@ const ProductDataTable = ({
 }) => {
 	const { _id, img, name, price, quote, stock, suppliername } = product;
 
+	const navigate = useNavigate();
+
 	//handle delete product
 	const handleDelete = (id) => {
 		const url = `http://localhost:5000/product/${id}`;
 		fetch(url, {
 			method: "DELETE",
+		})
+			.then((res) => res.json())
+			.then((result) => {
+				toast.success(result.message);
+				setDeleteProduct(!deleteProduct);
+			});
+	};
+
+	//handle updata product
+	const handleUpdate = (id) => {
+		const url = `http://localhost:5000/product/${id}`;
+		fetch(url, {
+			method: "PUT",
 		})
 			.then((res) => res.json())
 			.then((result) => {
@@ -38,7 +54,12 @@ const ProductDataTable = ({
 				<td>{suppliername}</td>
 				<td>
 					<div className="flex p-1 items-center justify-center">
-						<button className="bg-green-200 text-green-600 p-2 rounded-full mr-2">
+						<button
+							onClick={() => {
+								navigate(`/update-item/${_id}`);
+							}}
+							className="bg-green-200 text-green-600 p-2 rounded-full mr-2"
+						>
 							<PencilIcon className="w-6 h-6 "></PencilIcon>
 						</button>
 						<button
