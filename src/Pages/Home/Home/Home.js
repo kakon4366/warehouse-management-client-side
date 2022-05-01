@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "../Slider/Slider";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import { useNavigate } from "react-router-dom";
-import ManageInventories from "../../ManageInventories/ManageInventories";
+import Inventories from "../../Inventories/Inventories/Inventories";
 
 const Home = () => {
 	const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Home = () => {
 		<div>
 			<Slider></Slider>
 			<div>
-				<ManageInventories></ManageInventories>
+				<Inventories></Inventories>
 				<div className="flex justify-end container mx-auto">
 					<button
 						onClick={() => navigate("/manage-inventories")}

@@ -33,8 +33,8 @@ const Header = () => {
 						<CustomLink className="ml-12" to="/home">
 							Home
 						</CustomLink>
-						<CustomLink className="ml-12" to="/manage-inventories">
-							Manage Inventory
+						<CustomLink className="ml-12" to="/inventories">
+							Inventory
 						</CustomLink>
 						{user ? (
 							<button onClick={() => signOut(auth)} className="ml-12">
