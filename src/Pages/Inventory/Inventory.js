@@ -45,6 +45,11 @@ const Inventory = () => {
 		e.preventDefault();
 		const stockCount = e.target.stockCount.value;
 
+		if (!stockCount) {
+			toast.error("Please Provide Stock Count!");
+			return;
+		}
+
 		const addStockCount = parseInt(stock) + parseInt(stockCount);
 
 		console.log(addStockCount);
