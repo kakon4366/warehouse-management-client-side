@@ -1,9 +1,28 @@
 import React from "react";
 import { TrashIcon } from "@heroicons/react/outline";
 import { PencilIcon } from "@heroicons/react/solid";
+import { toast } from "react-toastify";
 
-const ProductDataTable = ({ product, index }) => {
-	const { img, name, price, quote, stock, suppliername } = product;
+const ProductDataTable = ({
+	product,
+	index,
+	setDeleteProduct,
+	deleteProduct,
+}) => {
+	const { _id, img, name, price, quote, stock, suppliername } = product;
+
+	//handle delete product
+	const handleDelete = (id) => {
+		const url = `http://localhost:5000/product/${id}`;
+		fetch(url, {
+			method: "DELETE",
+		})
+			.then((res) => res.json())
+			.then((result) => {
+				toast.success(result.message);
+				setDeleteProduct(!deleteProduct);
+			});
+	};
 
 	return (
 		<tbody>
@@ -22,7 +41,10 @@ const ProductDataTable = ({ product, index }) => {
 						<button className="bg-green-200 text-green-600 p-2 rounded-full mr-2">
 							<PencilIcon className="w-6 h-6 "></PencilIcon>
 						</button>
-						<button className="bg-red-200 p-2 rounded-full text-red-400">
+						<button
+							onClick={() => handleDelete(_id)}
+							className="bg-red-200 p-2 rounded-full text-red-400"
+						>
 							<TrashIcon className="w-6 h-6 "></TrashIcon>
 						</button>
 					</div>

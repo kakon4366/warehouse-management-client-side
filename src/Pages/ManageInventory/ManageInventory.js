@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useProducts from "../../Hooks/useProducts";
 import "./manageInventory.css";
 import ProductDataTable from "./ProductDataTable/ProductDataTable";
 
 const ManageInventory = () => {
-	const [products] = useProducts();
+	const [products, setProducts] = useState([]);
+	const [deleteProduct, setDeleteProduct] = useState(false);
+
+	useEffect(() => {
+		fetch("http://localhost:5000/products")
+			.then((res) => res.json())
+			.then((data) => setProducts(data));
+	}, [deleteProduct]);
 
 	const navigate = useNavigate();
 
@@ -37,6 +43,9 @@ const ManageInventory = () => {
 						</thead>
 						{products.map((product, index) => (
 							<ProductDataTable
+								setProducts={setProducts}
+								setDeleteProduct={setDeleteProduct}
+								deleteProduct={deleteProduct}
 								index={index}
 								product={product}
 								key={product._id}
