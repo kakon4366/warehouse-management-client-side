@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Inventory from "./Pages/Inventory/Inventory";
 import Inventories from "./Pages/Inventories/Inventories/Inventories";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
+import AddItem from "./Pages/AddItem/AddItem";
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					path="/manage-inventory"
 					element={<ManageInventory />}
 				></Route>
+				<Route path="/add-item" element={<AddItem />}></Route>
 				<Route path="/sign-in" element={<SignIn />}></Route>
 				<Route path="/sign-up" element={<SignUp />}></Route>
 			</Routes>
