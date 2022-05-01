@@ -1,0 +1,7 @@
+.manage-table{
+    width: 100%;
+}
+.manage-table, th, td, tr {
+    text-align: center;
+    border: 1px solid lightgray;
+}

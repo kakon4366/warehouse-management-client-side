@@ -36,6 +36,9 @@ const Header = () => {
 						<CustomLink className="ml-12" to="/inventories">
 							Inventory
 						</CustomLink>
+						<CustomLink className="ml-12" to="/manage-inventory">
+							Manage Inventory
+						</CustomLink>
 						{user ? (
 							<button onClick={() => signOut(auth)} className="ml-12">
 								Logout

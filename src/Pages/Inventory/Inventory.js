@@ -51,9 +51,6 @@ const Inventory = () => {
 		}
 
 		const addStockCount = parseInt(stock) + parseInt(stockCount);
-
-		console.log(addStockCount);
-
 		const updateProduct = { stock: addStockCount };
 
 		const url = `http://localhost:5000/addstock/${productId}`;
