@@ -27,19 +27,6 @@ const ProductDataTable = ({
 			});
 	};
 
-	//handle updata product
-	const handleUpdate = (id) => {
-		const url = `http://localhost:5000/product/${id}`;
-		fetch(url, {
-			method: "PUT",
-		})
-			.then((res) => res.json())
-			.then((result) => {
-				toast.success(result.message);
-				setDeleteProduct(!deleteProduct);
-			});
-	};
-
 	return (
 		<tbody>
 			<tr>
