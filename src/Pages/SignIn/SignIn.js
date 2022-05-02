@@ -42,6 +42,7 @@ const SignIn = () => {
 									type="text"
 									name="email"
 									placeholder="Eamil Address"
+									required
 								/>
 							</div>
 							<div className="flex flex-col text-lg mb-3">

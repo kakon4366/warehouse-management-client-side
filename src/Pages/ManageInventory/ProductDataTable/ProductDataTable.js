@@ -16,7 +16,7 @@ const ProductDataTable = ({
 
 	//handle delete product
 	const handleDelete = (id) => {
-		const url = `http://localhost:5000/product/${id}`;
+		const url = `https://fierce-garden-50697.herokuapp.com/product/${id}`;
 		fetch(url, {
 			method: "DELETE",
 		})

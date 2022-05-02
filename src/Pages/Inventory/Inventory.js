@@ -9,7 +9,7 @@ const Inventory = () => {
 
 	const { name, img, quote, price, stock, suppliername } = product;
 
-	const url = `http://localhost:5000/inventory/${productId}`;
+	const url = `https://fierce-garden-50697.herokuapp.com/inventory/${productId}`;
 	useEffect(() => {
 		fetch(url)
 			.then((res) => res.json())
@@ -25,7 +25,7 @@ const Inventory = () => {
 		}
 
 		const updateProduct = { stock: deliveredProduct };
-		const url = `http://localhost:5000/delivered/${productId}`;
+		const url = `https://fierce-garden-50697.herokuapp.com/delivered/${productId}`;
 		fetch(url, {
 			method: "PUT",
 			headers: {
@@ -53,7 +53,7 @@ const Inventory = () => {
 		const addStockCount = parseInt(stock) + parseInt(stockCount);
 		const updateProduct = { stock: addStockCount };
 
-		const url = `http://localhost:5000/addstock/${productId}`;
+		const url = `https://fierce-garden-50697.herokuapp.com/addstock/${productId}`;
 		fetch(url, {
 			method: "PUT",
 			headers: {

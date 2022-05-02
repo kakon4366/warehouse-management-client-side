@@ -13,7 +13,7 @@ const UpdateItem = () => {
 	const { productId } = useParams();
 
 	useEffect(() => {
-		const url = `http://localhost:5000/product/${productId}`;
+		const url = `https://fierce-garden-50697.herokuapp.com/product/${productId}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((product) => setUpdateProduct(product));
@@ -30,7 +30,7 @@ const UpdateItem = () => {
 		) {
 			return toast.error("Please touch all fields!");
 		}
-		const url = `http://localhost:5000/product/${productId}`;
+		const url = `https://fierce-garden-50697.herokuapp.com/product/${productId}`;
 		fetch(url, {
 			method: "PUT",
 			headers: {

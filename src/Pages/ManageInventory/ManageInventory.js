@@ -8,7 +8,7 @@ const ManageInventory = () => {
 	const [deleteProduct, setDeleteProduct] = useState(false);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/products")
+		fetch("https://fierce-garden-50697.herokuapp.com/products")
 			.then((res) => res.json())
 			.then((data) => setProducts(data));
 	}, [deleteProduct]);

@@ -9,21 +9,23 @@ const Inventories = () => {
 
 	//get all products
 	useEffect(() => {
-		fetch(`http://localhost:5000/productsList?page=${page}&limit=${limit}`)
+		fetch(
+			`https://fierce-garden-50697.herokuapp.com/productsList?page=${page}&limit=${limit}`
+		)
 			.then((res) => res.json())
 			.then((data) => setProducts(data));
 	}, [page, limit]);
 
 	//get products count
 	useEffect(() => {
-		fetch("http://localhost:5000/productsCount")
+		fetch("https://fierce-garden-50697.herokuapp.com/productsCount")
 			.then((res) => res.json())
 			.then((result) => {
 				const count = result.count;
-				const page = Math.ceil(count / 3);
+				const page = Math.ceil(count / limit);
 				setPageCount(page);
 			});
-	}, []);
+	}, [limit]);
 
 	return (
 		<section className="pt-20 py-10">

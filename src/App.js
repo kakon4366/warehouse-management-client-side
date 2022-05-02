@@ -15,6 +15,7 @@ import MyItems from "./Pages/MyItems/MyItems";
 import NotFound404 from "./Pages/Shared/NotFound404/NotFound404";
 import UpdateItem from "./Pages/UpdateItem/UpdateItem";
 import RequireAuth from "./Pages/Shared/RequireAuth/RequireAuth";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
 	return (
@@ -39,6 +40,7 @@ function App() {
 				<Route path="/manage-items" element={<ManageInventory />}></Route>
 				<Route path="/add-item" element={<AddItem />}></Route>
 				<Route path="/my-items" element={<MyItems />}></Route>
+				<Route path="/blog" element={<Blog />}></Route>
 				<Route path="/sign-in" element={<SignIn />}></Route>
 				<Route path="/sign-up" element={<SignUp />}></Route>
 				<Route path="*" element={<NotFound404 />}></Route>

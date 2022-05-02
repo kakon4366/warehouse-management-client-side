@@ -8,7 +8,7 @@ const MyItems = () => {
 	const [user] = useAuthState(auth);
 
 	useEffect(() => {
-		const url = `http://localhost:5000/myproduct?email=${user?.email}`;
+		const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${user?.email}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((result) => setMyProducts(result));

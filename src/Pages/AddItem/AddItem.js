@@ -11,7 +11,7 @@ const AddItem = () => {
 	const onSubmit = (data, e) => {
 		data.email = user.email;
 
-		const url = `http://localhost:5000/product`;
+		const url = `https://fierce-garden-50697.herokuapp.com/product`;
 		fetch(url, {
 			method: "POST",
 			headers: {
