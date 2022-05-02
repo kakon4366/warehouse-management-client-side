@@ -71,13 +71,13 @@ const UpdateItem = () => {
 						<input
 							defaultValue={price}
 							className="mb-3 p-2 rounded border-orange-200 border"
-							placeholder="Product Price"
+							placeholder="Product Price (per KG)"
 							{...register("price")}
 						/>
 						<input
 							defaultValue={stock}
 							className="mb-3 p-2 rounded border-orange-200 border"
-							placeholder="Stock"
+							placeholder="Stock (KG)"
 							{...register("stock")}
 						/>
 						<input

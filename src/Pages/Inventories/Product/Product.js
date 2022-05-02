@@ -13,7 +13,8 @@ const Product = ({ product }) => {
 				<h2 className="text-2xl md:text-3xl ">{name}</h2>
 				<p className="text-lg">{quote}</p>
 				<h4 className="text-xl mt-4">
-					Price: $<span>{price}</span>
+					Price: $<span>{price}</span>{" "}
+					<span className="text-sm">(per KG)</span>
 				</h4>
 				<div className="flex justify-between">
 					<div className="italic text-slate-600">
@@ -22,6 +23,7 @@ const Product = ({ product }) => {
 							<span>
 								{stock <= 0 ? "Product stock not avilable." : stock}
 							</span>
+							<span> (KG)</span>
 						</p>
 						<p className="text-sm">
 							Supplier Name: <span>({suppliername})</span>

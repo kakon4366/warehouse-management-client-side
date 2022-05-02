@@ -5,8 +5,7 @@ import auth from "../../firebase.init";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const ForgotPassword = () => {
-	const [sendPasswordResetEmail, sending, error] =
-		useSendPasswordResetEmail(auth);
+	const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
 	const handleResetPassword = async (e) => {
 		e.preventDefault();

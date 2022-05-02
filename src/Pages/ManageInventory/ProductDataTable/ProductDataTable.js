@@ -37,9 +37,13 @@ const ProductDataTable = ({
 					<img width="150px" src={img} alt="" />
 				</td>
 				<td>{name}</td>
-				<td>{price}</td>
+				<td>
+					$<span>{price}</span> <span className="text-sm">(per KG)</span>
+				</td>
 				<td>{quote}</td>
-				<td>{stock}</td>
+				<td>
+					{stock} <span className="text-sm italic"> (KG)</span>
+				</td>
 				<td>{suppliername}</td>
 				<td>
 					<div className="flex p-1 items-center justify-center">

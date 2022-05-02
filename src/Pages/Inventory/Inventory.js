@@ -84,12 +84,14 @@ const Inventory = () => {
 							<p className="text-lg">{quote}</p>
 							<h4 className="text-2xl my-4">
 								Price: $<span>{price}</span>
+								<span className="text-sm"> (per KG)</span>
 							</h4>
 							<p className="text-sm italic">
 								Stock:{" "}
 								<span>
 									{stock <= 0 ? "Product stock not avilable." : stock}
 								</span>
+								<span> (KG)</span>
 							</p>
 							<p className="text-sm italic">
 								Supplier Name: {suppliername}
@@ -115,7 +117,7 @@ const Inventory = () => {
 							<input
 								name="stockCount"
 								type="number"
-								placeholder="Stock Count"
+								placeholder="Stock Count (KG)"
 								className="w-full border border-orange-300 py-2 px-4 text-lg"
 							/>
 							<input

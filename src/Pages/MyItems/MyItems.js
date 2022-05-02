@@ -57,8 +57,11 @@ const MyItems = () => {
 									<p>{myProduct.quote}</p>
 									<h4 className="my-2 text-xl">
 										Price: $<span>{myProduct.price}</span>
+										<span className="text-sm"> (per KG)</span>
 									</h4>
-									<p className="text-sm">Stock: {myProduct.stock}</p>
+									<p className="text-sm">
+										Stock: {myProduct.stock} <span>(KG)</span>
+									</p>
 									<p className="text-sm">
 										Supplier Name: {myProduct.suppliername}
 									</p>
