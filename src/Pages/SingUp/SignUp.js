@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SocialSignIn from "../Shared/SocialSignIn/SocialSignIn";
 import {
 	useCreateUserWithEmailAndPassword,
@@ -6,15 +6,29 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
 	const [passwordError, setPasswordError] = useState("");
-	const [createUserWithEmailAndPassword, loading, error] =
-		useCreateUserWithEmailAndPassword(auth);
+	const [check, setCheck] = useState(false);
+	const [createUserWithEmailAndPassword, user, loading, error] =
+		useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 	const [updateProfile] = useUpdateProfile(auth);
 
 	const navigate = useNavigate();
+	const location = useLocation();
+
+	const from = location.state?.from?.pathname || "/";
+
+	useEffect(() => {
+		if (user) {
+			navigate(from, { replace: true });
+		}
+	}, [user]);
+
+	if (loading) {
+		return <h1>Loadding...</h1>;
+	}
 
 	const handleSignUp = async (e) => {
 		e.preventDefault();
@@ -30,9 +44,9 @@ const SignUp = () => {
 		await createUserWithEmailAndPassword(email, password);
 		await updateProfile({ displayName: name });
 		toast.success("Sign Up Success!");
+		toast.success("Send email Varification!");
 		setPasswordError("");
 		e.target.reset();
-		navigate("/sign-in");
 	};
 
 	return (
@@ -94,11 +108,37 @@ const SignUp = () => {
 							<small className="text-red-500">
 								{error ? error.message : ""}
 							</small>
+							<div className="flex items-center">
+								<input
+									onChange={(e) => setCheck(e.target.checked)}
+									type="checkbox"
+									id="check"
+								/>
+								<label
+									htmlFor="check"
+									className={`ml-1 text-sm ${
+										check ? "text-gray-800" : "text-gray-500"
+									}`}
+								>
+									Accept terms and conditions?
+								</label>
+							</div>
 							<input
-								className="bg-orange-500 hover:bg-orange-600 transition-all cursor-pointer w-full text-white py-2 rounded mt-4"
+								disabled={check ? false : true}
+								className={`transition-all cursor-pointer w-full text-white py-2 rounded mt-4 ${
+									check
+										? "bg-orange-500 hover:bg-orange-600"
+										: "bg-orange-400"
+								}`}
 								type="submit"
 								value={loading ? "Loading..." : "Sign Up"}
 							/>
+							<p className="mt-2">
+								Have an Account?{" "}
+								<Link className="text-orange-500" to="/sign-in">
+									Sign in
+								</Link>
+							</p>
 						</form>
 						<SocialSignIn></SocialSignIn>
 					</div>

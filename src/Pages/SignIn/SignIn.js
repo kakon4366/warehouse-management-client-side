@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import SocialSignIn from "../Shared/SocialSignIn/SocialSignIn";
 
@@ -9,9 +9,18 @@ const SignIn = () => {
 		useSignInWithEmailAndPassword(auth);
 
 	const navigate = useNavigate();
+	const location = useLocation();
 
-	if (user) {
-		navigate("/home");
+	const from = location.state?.from?.pathname || "/";
+
+	useEffect(() => {
+		if (user) {
+			navigate(from, { replace: true });
+		}
+	}, [user]);
+
+	if (loading) {
+		return <h1>Loading...</h1>;
 	}
 
 	const handleSignIn = (e) => {
@@ -63,6 +72,15 @@ const SignIn = () => {
 								type="submit"
 								value={loading ? "Loading..." : "Sign In"}
 							/>
+							<p className="mt-2">
+								Need an Account?{" "}
+								<Link className="text-orange-500" to="/sign-up">
+									Sign up
+								</Link>
+							</p>
+							<p className="text-orange-500 mt-2">
+								<Link to="/forgot-password">Forgot Password?</Link>
+							</p>
 						</form>
 						<SocialSignIn></SocialSignIn>
 					</div>

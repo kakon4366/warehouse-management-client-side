@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { ArrowLeftIcon } from "@heroicons/react/solid";
 
 const AddItem = () => {
 	const { register, handleSubmit } = useForm();
@@ -29,6 +30,13 @@ const AddItem = () => {
 	return (
 		<section className="py-20">
 			<div className="container mx-auto px-2">
+				<button
+					onClick={() => window.history.back()}
+					className="bg-orange-500 py-2 px-6 rounded text-white flex justify-center items-center"
+				>
+					<ArrowLeftIcon className="w-6 h-6 mr-2"></ArrowLeftIcon>
+					Back To Previous
+				</button>
 				<h3 className="text-3xl text-center">Add New Item</h3>
 				<div className="text-center md:w-3/4 lg:w-1/2 mx-auto mt-8">
 					<form
