@@ -4,6 +4,7 @@ import CustomLink from "../CustomLink/CustomLink";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
+import logo from "../../../Images/Logo.png";
 
 const Header = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -12,10 +13,10 @@ const Header = () => {
 
 	return (
 		<header className="bg-green-600 py-5">
-			<div className="container mx-auto">
-				<nav className="flex justify-between text-white">
+			<div className="container mx-auto px-4">
+				<nav className="flex justify-between items-center text-white">
 					<div className="logo">
-						<h3 className="text-xl">Logo Here</h3>
+						<img width="80px" src={logo} alt="" />
 					</div>
 					<div className="lg:hidden">
 						<MenuAlt3Icon
@@ -26,7 +27,7 @@ const Header = () => {
 						</MenuAlt3Icon>
 					</div>
 					<ul
-						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-yellow-600 lg:bg-transparent left-0 w-full lg:w-auto top-16 text-center lg:flex lg:block z-50 ${
+						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-yellow-600 lg:bg-transparent left-0 w-full lg:w-auto top-24 text-center lg:flex lg:block py-4 z-50 ${
 							showMenu ? "" : "hidden"
 						}`}
 					>

@@ -14,7 +14,7 @@ const Home = () => {
 			<PageTitle title="Home"></PageTitle>
 			<Slider></Slider>
 			<div className="pt-20 py-10">
-				<div className="container mx-auto">
+				<div className="container mx-auto px-2">
 					<h2 className="text-4xl text-center font-semibold">Inventory</h2>
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 						{products.slice(0, 6).map((product) => (

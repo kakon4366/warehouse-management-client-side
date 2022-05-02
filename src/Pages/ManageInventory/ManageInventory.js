@@ -19,7 +19,7 @@ const ManageInventory = () => {
 	return (
 		<section className="py-20">
 			<PageTitle title="Manage Items"></PageTitle>
-			<div className="container mx-auto">
+			<div className="container mx-auto px-2">
 				<h2 className="text-3xl text-center">Manage Items</h2>
 				<div className="text-center mt-4">
 					<button
