@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const MyItems = () => {
 	const [myProducts, setMyProducts] = useState([]);
@@ -34,6 +35,7 @@ const MyItems = () => {
 
 	return (
 		<section className="py-20">
+			<PageTitle title="My Items"></PageTitle>
 			<div className="container mx-auto">
 				<h2 className="text-3xl text-center mb-8">My Items</h2>
 				<div className="px-2 w-full lg:w-3/4 xl:w-1/2 mx-auto">

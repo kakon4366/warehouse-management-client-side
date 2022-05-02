@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { ArrowLeftIcon } from "@heroicons/react/solid";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const AddItem = () => {
 	const { register, handleSubmit } = useForm();
@@ -29,6 +30,7 @@ const AddItem = () => {
 
 	return (
 		<section className="py-20">
+			<PageTitle title="Add Item"></PageTitle>
 			<div className="container mx-auto px-2">
 				<button
 					onClick={() => window.history.back()}

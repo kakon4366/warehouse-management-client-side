@@ -2,6 +2,7 @@ import React from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const ForgotPassword = () => {
 	const [sendPasswordResetEmail, sending, error] =
@@ -20,6 +21,7 @@ const ForgotPassword = () => {
 
 	return (
 		<section className="py-20">
+			<PageTitle title="Forgot Password"></PageTitle>
 			<div className="container mx-auto">
 				<div className="bg-orange-200 p-8 rounded w-[400px] mx-auto">
 					<form

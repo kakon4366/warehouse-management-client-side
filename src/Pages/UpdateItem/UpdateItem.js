@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const UpdateItem = () => {
 	const [updateProduct, setUpdateProduct] = useState([]);
@@ -46,6 +47,7 @@ const UpdateItem = () => {
 
 	return (
 		<section className="py-20">
+			<PageTitle title="Update Item"></PageTitle>
 			<div className="container mx-auto px-2">
 				<button
 					onClick={() => window.history.back()}

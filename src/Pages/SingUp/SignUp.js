@@ -7,6 +7,7 @@ import {
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const SignUp = () => {
 	const [passwordError, setPasswordError] = useState("");
@@ -51,6 +52,7 @@ const SignUp = () => {
 
 	return (
 		<section className="py-20">
+			<PageTitle title="Sign Up"></PageTitle>
 			<div className="container mx-auto">
 				<div className="flex justify-center items-center w-full">
 					<div className="w-[300px] ">

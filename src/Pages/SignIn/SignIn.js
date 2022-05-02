@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 import SocialSignIn from "../Shared/SocialSignIn/SocialSignIn";
 
 const SignIn = () => {
@@ -33,6 +34,7 @@ const SignIn = () => {
 	};
 	return (
 		<section className="py-20">
+			<PageTitle title="Sign In"></PageTitle>
 			<div className="container mx-auto">
 				<div className="flex justify-center items-center w-full">
 					<div className="w-[300px] ">

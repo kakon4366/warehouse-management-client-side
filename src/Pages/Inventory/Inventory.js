@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Inventory = () => {
 	const { productId } = useParams();
@@ -71,6 +72,7 @@ const Inventory = () => {
 
 	return (
 		<section className="py-20">
+			<PageTitle title="Inventory"></PageTitle>
 			<div className="container mx-auto">
 				<div className="grid lg:grid-cols-3 gap-12">
 					<div className="border bg-orange-100 lg:col-span-2 md:flex rounded-l-lg">

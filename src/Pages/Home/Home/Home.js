@@ -4,12 +4,14 @@ import { ArrowRightIcon } from "@heroicons/react/solid";
 import { useNavigate } from "react-router-dom";
 import useProducts from "../../../Hooks/useProducts";
 import Product from "../../Inventories/Product/Product";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const Home = () => {
 	const [products] = useProducts();
 	const navigate = useNavigate();
 	return (
 		<div>
+			<PageTitle title="Home"></PageTitle>
 			<Slider></Slider>
 			<div className="pt-20 py-10">
 				<div className="container mx-auto">

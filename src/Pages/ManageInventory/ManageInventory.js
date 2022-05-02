@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 import "./manageInventory.css";
 import ProductDataTable from "./ProductDataTable/ProductDataTable";
 
@@ -17,6 +18,7 @@ const ManageInventory = () => {
 
 	return (
 		<section className="py-20">
+			<PageTitle title="Manage Items"></PageTitle>
 			<div className="container mx-auto">
 				<h2 className="text-3xl text-center">Manage Items</h2>
 				<div className="text-center mt-4">

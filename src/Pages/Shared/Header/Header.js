@@ -34,7 +34,7 @@ const Header = () => {
 							Home
 						</CustomLink>
 						<CustomLink className="ml-12" to="/inventories">
-							Inventory
+							Inventories
 						</CustomLink>
 						{user && (
 							<>

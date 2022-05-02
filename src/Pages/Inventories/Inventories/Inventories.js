@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Product from "../Product/Product";
 
 const Inventories = () => {
@@ -29,6 +30,7 @@ const Inventories = () => {
 
 	return (
 		<section className="pt-20 py-10">
+			<PageTitle title="Inventories"></PageTitle>
 			<div className="container mx-auto">
 				<h2 className="text-4xl text-center font-semibold">Inventory</h2>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
