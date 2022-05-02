@@ -1,19 +1,36 @@
-import { async } from "@firebase/util";
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const MyItems = () => {
 	const [myProducts, setMyProducts] = useState([]);
 	const [user] = useAuthState(auth);
+	const [deleteMyProduct, setDeleteMyProduct] = useState(false);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${user?.email}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((result) => setMyProducts(result));
-	}, []);
+	}, [deleteMyProduct]);
+
+	const handleDeleteMyProduct = (id) => {
+		if (window.confirm("Are you sure delete this item?")) {
+			const url = `https://fierce-garden-50697.herokuapp.com/product/${id}`;
+			fetch(url, {
+				method: "DELETE",
+			})
+				.then((res) => res.json())
+				.then((result) => {
+					toast.success(result.message);
+					setDeleteMyProduct(!deleteMyProduct);
+				});
+		}
+	};
 
 	return (
 		<section className="py-20">
@@ -45,10 +62,20 @@ const MyItems = () => {
 									</p>
 								</div>
 								<div className="sm:p-4 mt-2 sm:mt-0">
-									<button className="bg-green-200 text-green-600 p-2 rounded-full mr-2">
+									<button
+										onClick={() => {
+											navigate(`/update-item/${myProduct._id}`);
+										}}
+										className="bg-green-200 text-green-600 p-2 rounded-full mr-2"
+									>
 										<PencilAltIcon className="w-4 h-4"></PencilAltIcon>
 									</button>
-									<button className="bg-red-200 p-2 rounded-full text-red-400">
+									<button
+										onClick={() =>
+											handleDeleteMyProduct(myProduct._id)
+										}
+										className="bg-red-200 p-2 rounded-full text-red-400"
+									>
 										<TrashIcon className="w-4 h-4"></TrashIcon>
 									</button>
 								</div>
