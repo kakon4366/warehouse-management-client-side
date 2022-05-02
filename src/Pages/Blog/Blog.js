@@ -49,6 +49,31 @@ const Blog = () => {
 						</h2>
 						<p>
 							<span className="font-semibold">Ans: </span>
+							SQL Database classifies as relational database. SQL has
+							episode defined schemas. SQL is called a table base
+							database because all this data is in the form of tables or
+							forms. SQL Database Complex is suitable as a query.
+							<br />
+							<br />
+							No SQL Database does not classify as Relational Database.
+							No SQL has dynamic schema. No SQL Database Key Value Pairs
+							Collection. No SQL Database Complex is not suitable as a
+							query.
+						</p>
+					</div>
+					<div className="bg-green-200 p-4 rounded">
+						<h2 className="text-2xl mb-2 italic">
+							What is the purpose of jwt and how does it work?
+						</h2>
+						<p>
+							<span className="font-semibold">Ans: </span>
+							JWT is called JSON Web Token. Any API can be secured
+							through JWT. JWT has three parts 1. Header, 2. Payload, 3.
+							‍Signature JWT encrypts an email with a signature. It
+							basically generates a token for the user while logging in
+							to the website. By comparing the login with the email, the
+							user gets access if the email is valid. This is how JWT
+							basically works on different websites.
 						</p>
 					</div>
 				</div>
