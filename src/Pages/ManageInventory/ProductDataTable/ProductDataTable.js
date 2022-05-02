@@ -16,15 +16,17 @@ const ProductDataTable = ({
 
 	//handle delete product
 	const handleDelete = (id) => {
-		const url = `https://fierce-garden-50697.herokuapp.com/product/${id}`;
-		fetch(url, {
-			method: "DELETE",
-		})
-			.then((res) => res.json())
-			.then((result) => {
-				toast.success(result.message);
-				setDeleteProduct(!deleteProduct);
-			});
+		if (window.confirm("Are you sure delete this item?")) {
+			const url = `https://fierce-garden-50697.herokuapp.com/product/${id}`;
+			fetch(url, {
+				method: "DELETE",
+			})
+				.then((res) => res.json())
+				.then((result) => {
+					toast.success(result.message);
+					setDeleteProduct(!deleteProduct);
+				});
+		}
 	};
 
 	return (
