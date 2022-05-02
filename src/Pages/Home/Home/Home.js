@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useProducts from "../../../Hooks/useProducts";
 import Product from "../../Inventories/Product/Product";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
+import Subscribe from "../../Subscribe/Subscribe";
 
 const Home = () => {
 	const [products] = useProducts();
@@ -33,6 +34,7 @@ const Home = () => {
 					</button>
 				</div>
 			</div>
+			<Subscribe></Subscribe>
 		</div>
 	);
 };
