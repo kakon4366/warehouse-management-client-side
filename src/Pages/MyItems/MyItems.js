@@ -15,8 +15,9 @@ const MyItems = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${user?.email}`;
+		const email = user.email;
 		const getMyItems = async () => {
+			const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${email}`;
 			try {
 				const { data } = await axios.get(url, {
 					headers: {
@@ -32,13 +33,12 @@ const MyItems = () => {
 					error.response.status === 403
 				) {
 					signOut(auth);
-					console.log("Asceee re");
 					navigate("/sign-in");
 				}
 			}
 		};
 		getMyItems();
-	}, [deleteMyProduct]);
+	}, []);
 
 	const handleDeleteMyProduct = (id) => {
 		if (window.confirm("Are you sure delete this item?")) {
