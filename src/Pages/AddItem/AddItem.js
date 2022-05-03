@@ -29,7 +29,7 @@ const AddItem = () => {
 	};
 
 	return (
-		<section className="py-20">
+		<section className="py-20 ">
 			<PageTitle title="Add Item"></PageTitle>
 			<div className="container mx-auto px-2">
 				<button

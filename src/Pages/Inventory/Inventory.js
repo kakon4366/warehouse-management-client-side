@@ -75,7 +75,7 @@ const Inventory = () => {
 			<PageTitle title="Inventory"></PageTitle>
 			<div className="container mx-auto">
 				<div className="grid lg:grid-cols-3 gap-12">
-					<div className="border bg-orange-100 lg:col-span-2 md:flex rounded-l-lg">
+					<div className="border bg-orange-100 lg:col-span-2 md:flex rounded-l-lg rounded">
 						<div className="md:border-l-8 md:rounded-l-lg md:border-orange-600">
 							<img src={img} alt="" width="100%" />
 						</div>
@@ -104,7 +104,7 @@ const Inventory = () => {
 							</button>
 						</div>
 					</div>
-					<div className="bg-yellow-100 p-8 w-full">
+					<div className="bg-yellow-100 p-8 w-full rounded border">
 						<h2 className="text-3xl text-center mb-4">
 							Restock the items
 						</h2>
@@ -118,7 +118,7 @@ const Inventory = () => {
 								name="stockCount"
 								type="number"
 								placeholder="Stock Count (KG)"
-								className="w-full border border-orange-300 py-2 px-4 text-lg"
+								className="w-full border border-gray-300 py-2 px-4 text-lg"
 							/>
 							<input
 								className="bg-green-500 hover:bg-green-600 transition-all py-2 px-6 w-full text-white rounded uppercase font-semibold mt-6 cursor-pointer"

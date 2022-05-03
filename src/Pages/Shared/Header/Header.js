@@ -12,7 +12,7 @@ const Header = () => {
 	const [user] = useAuthState(auth);
 
 	return (
-		<header className="bg-green-600 py-5 sticky top-0 z-10 w-full">
+		<header className="bg-gradient-to-r from-green-500 to-yellow-500 py-5 sticky top-0 z-10 w-full">
 			<div className="container mx-auto px-4">
 				<nav className="flex justify-between items-center text-white">
 					<div className="logo">

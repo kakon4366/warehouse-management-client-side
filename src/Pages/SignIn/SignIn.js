@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 import SocialSignIn from "../Shared/SocialSignIn/SocialSignIn";
+import "./SignIn.css";
 
 const SignIn = () => {
 	const [signInWithEmailAndPassword, user, loading, LoginError] =
@@ -21,7 +23,7 @@ const SignIn = () => {
 	}, [user]);
 
 	if (loading) {
-		return <h1>Loading...</h1>;
+		return <Loading></Loading>;
 	}
 
 	const handleSignIn = (e) => {
@@ -33,15 +35,15 @@ const SignIn = () => {
 		signInWithEmailAndPassword(email, password);
 	};
 	return (
-		<section className="py-20">
+		<section className="py-20 singin-area">
 			<PageTitle title="Sign In"></PageTitle>
 			<div className="container mx-auto">
 				<div className="flex justify-center items-center w-full">
-					<div className="w-[300px] ">
+					<div className="w-full mx-2 sm:w-[400px]">
 						<form
 							onSubmit={handleSignIn}
 							action=""
-							className="bg-orange-100 p-4 rounded"
+							className="bg-white border-gray-300 border-2 p-6 rounded"
 						>
 							<h3 className="text-2xl text-center font-semibold">
 								Sign In

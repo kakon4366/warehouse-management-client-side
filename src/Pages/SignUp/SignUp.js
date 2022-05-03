@@ -8,6 +8,8 @@ import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../Shared/PageTitle/PageTitle";
+import "./SignUp.css";
+import Loading from "../Shared/Loading/Loading";
 
 const SignUp = () => {
 	const [passwordError, setPasswordError] = useState("");
@@ -28,7 +30,7 @@ const SignUp = () => {
 	}, [user]);
 
 	if (loading) {
-		return <h1>Loadding...</h1>;
+		return <Loading></Loading>;
 	}
 
 	const handleSignUp = async (e) => {
@@ -51,15 +53,15 @@ const SignUp = () => {
 	};
 
 	return (
-		<section className="py-20">
+		<section className="py-20 singup-area">
 			<PageTitle title="Sign Up"></PageTitle>
 			<div className="container mx-auto">
 				<div className="flex justify-center items-center w-full">
-					<div className="w-[300px] ">
+					<div className=" w-full mx-2 sm:w-[400px] ">
 						<form
 							onSubmit={handleSignUp}
 							action=""
-							className="bg-orange-100 p-4 rounded"
+							className="bg-white border-gray-300 border-2 p-6 rounded"
 						>
 							<h3 className="text-2xl text-center font-semibold">
 								Sing Up

@@ -3,7 +3,7 @@ import Header from "./Pages/Shared/Header/Header";
 import Footer from "./Pages/Shared/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home/Home";
-import SignUp from "./Pages/SingUp/SignUp";
+import SignUp from "./Pages/SignUp/SignUp";
 import SignIn from "./Pages/SignIn/SignIn";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,12 +35,37 @@ function App() {
 				></Route>
 				<Route
 					path="/update-item/:productId"
-					element={<UpdateItem />}
+					element={
+						<RequireAuth>
+							<UpdateItem />
+						</RequireAuth>
+					}
 				></Route>
 				<Route path="/inventories" element={<Inventories />}></Route>
-				<Route path="/manage-items" element={<ManageInventory />}></Route>
-				<Route path="/add-item" element={<AddItem />}></Route>
-				<Route path="/my-items" element={<MyItems />}></Route>
+				<Route
+					path="/manage-items"
+					element={
+						<RequireAuth>
+							<ManageInventory />
+						</RequireAuth>
+					}
+				></Route>
+				<Route
+					path="/add-item"
+					element={
+						<RequireAuth>
+							<AddItem />
+						</RequireAuth>
+					}
+				></Route>
+				<Route
+					path="/my-items"
+					element={
+						<RequireAuth>
+							<MyItems />
+						</RequireAuth>
+					}
+				></Route>
 				<Route path="/blog" element={<Blog />}></Route>
 				<Route path="/sign-in" element={<SignIn />}></Route>
 				<Route path="/sign-up" element={<SignUp />}></Route>
