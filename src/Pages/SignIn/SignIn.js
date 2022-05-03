@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useEffect } from "react";
+import axios from "axios";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -33,9 +33,12 @@ const SignIn = () => {
 		const password = e.target.password.value;
 
 		await signInWithEmailAndPassword(email, password);
-		const { data } = await axios.post("http://localhost:5000/signin", {
-			email,
-		});
+		const { data } = await axios.post(
+			"https://fierce-garden-50697.herokuapp.com/signin",
+			{
+				email,
+			}
+		);
 		localStorage.setItem("access_token", data.accessToken);
 		navigate(from, { replace: true });
 	};

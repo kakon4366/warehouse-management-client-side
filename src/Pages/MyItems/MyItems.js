@@ -14,15 +14,8 @@ const MyItems = () => {
 	const [deleteMyProduct, setDeleteMyProduct] = useState(false);
 	const navigate = useNavigate();
 
-	// useEffect(() => {
-	// 	const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${user?.email}`;
-	// 	fetch(url)
-	// 		.then((res) => res.json())
-	// 		.then((result) => setMyProducts(result));
-	// }, [deleteMyProduct]);
-
 	useEffect(() => {
-		const url = `http://localhost:5000/myproduct?email=${user?.email}`;
+		const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${user?.email}`;
 		const getMyItems = async () => {
 			try {
 				const { data } = await axios.get(url, {
@@ -40,7 +33,6 @@ const MyItems = () => {
 				) {
 					signOut(auth);
 					console.log("Asceee re");
-					localStorage.removeItem("access_token");
 					navigate("/sign-in");
 				}
 			}
