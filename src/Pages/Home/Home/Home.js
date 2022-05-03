@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import useProducts from "../../../Hooks/useProducts";
 import Product from "../../Inventories/Product/Product";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
-import Subscribe from "../../Subscribe/Subscribe";
+import Subscribe from "../Subscribe/Subscribe";
+import Benefits from "../Benefits/Benefits";
 
 const Home = () => {
 	const [products] = useProducts();
@@ -35,6 +36,7 @@ const Home = () => {
 				</div>
 			</div>
 			<Subscribe></Subscribe>
+			<Benefits></Benefits>
 		</div>
 	);
 };

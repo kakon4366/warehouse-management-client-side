@@ -91,7 +91,7 @@ const Footer = () => {
 					</div>
 					<p className="text-gray-300 order-1 text-center">
 						<small>
-							Copyright &copy; by Warehouse Management - {year}
+							Copyright &copy; by Fruits Strip Warehouse - {year}
 						</small>
 					</p>
 				</div>
