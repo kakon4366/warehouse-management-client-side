@@ -1,4 +1,6 @@
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/solid";
+import axios from "axios";
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -12,11 +14,38 @@ const MyItems = () => {
 	const [deleteMyProduct, setDeleteMyProduct] = useState(false);
 	const navigate = useNavigate();
 
+	// useEffect(() => {
+	// 	const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${user?.email}`;
+	// 	fetch(url)
+	// 		.then((res) => res.json())
+	// 		.then((result) => setMyProducts(result));
+	// }, [deleteMyProduct]);
+
 	useEffect(() => {
-		const url = `https://fierce-garden-50697.herokuapp.com/myproduct?email=${user?.email}`;
-		fetch(url)
-			.then((res) => res.json())
-			.then((result) => setMyProducts(result));
+		const url = `http://localhost:5000/myproduct?email=${user?.email}`;
+		const getMyItems = async () => {
+			try {
+				const { data } = await axios.get(url, {
+					headers: {
+						authorization: `Bearer ${localStorage.getItem(
+							"access_token"
+						)}`,
+					},
+				});
+				setMyProducts(data);
+			} catch (error) {
+				if (
+					error.response.status === 401 ||
+					error.response.status === 403
+				) {
+					signOut(auth);
+					console.log("Asceee re");
+					localStorage.removeItem("access_token");
+					navigate("/sign-in");
+				}
+			}
+		};
+		getMyItems();
 	}, [deleteMyProduct]);
 
 	const handleDeleteMyProduct = (id) => {

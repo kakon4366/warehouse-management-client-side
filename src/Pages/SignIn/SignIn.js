@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -18,7 +19,7 @@ const SignIn = () => {
 
 	useEffect(() => {
 		if (user) {
-			navigate(from, { replace: true });
+			// navigate(from, { replace: true });
 		}
 	}, [user]);
 
@@ -26,13 +27,17 @@ const SignIn = () => {
 		return <Loading></Loading>;
 	}
 
-	const handleSignIn = (e) => {
+	const handleSignIn = async (e) => {
 		e.preventDefault();
 		const email = e.target.email.value;
 		const password = e.target.password.value;
-		console.log(email, password);
 
-		signInWithEmailAndPassword(email, password);
+		await signInWithEmailAndPassword(email, password);
+		const { data } = await axios.post("http://localhost:5000/signin", {
+			email,
+		});
+		localStorage.setItem("access_token", data.accessToken);
+		navigate(from, { replace: true });
 	};
 	return (
 		<section className="py-20 singin-area">
