@@ -19,7 +19,7 @@ const ForgotPassword = () => {
 	};
 
 	return (
-		<section className="py-20">
+		<section className="py-20" data-aos="flip-up">
 			<PageTitle title="Forgot Password"></PageTitle>
 			<div className="container mx-auto">
 				<div className="bg-orange-200 p-8 rounded w-[400px] mx-auto">

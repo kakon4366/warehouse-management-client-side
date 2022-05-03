@@ -9,7 +9,7 @@ import slide4 from "../../../Images/slide-4.jpg";
 
 const Slider = () => {
 	return (
-		<section>
+		<section data-aos="fade-up">
 			<Carousel
 				autoPlay={true}
 				infiniteLoop={true}

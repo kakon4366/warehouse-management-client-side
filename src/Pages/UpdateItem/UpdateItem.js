@@ -46,7 +46,7 @@ const UpdateItem = () => {
 	};
 
 	return (
-		<section className="py-20">
+		<section className="py-20" data-aos="slide-right">
 			<PageTitle title="Update Item"></PageTitle>
 			<div className="container mx-auto px-2">
 				<button

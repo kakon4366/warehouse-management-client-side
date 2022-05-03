@@ -34,7 +34,7 @@ const MyItems = () => {
 	};
 
 	return (
-		<section className="py-20">
+		<section className="py-20" data-aos="slide-down">
 			<PageTitle title="My Items"></PageTitle>
 			<div className="container mx-auto">
 				<h2 className="text-3xl text-center mb-8">My Items</h2>

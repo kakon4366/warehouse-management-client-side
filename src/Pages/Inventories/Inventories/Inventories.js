@@ -29,7 +29,7 @@ const Inventories = () => {
 	}, [limit]);
 
 	return (
-		<section className="pt-20 py-10">
+		<section className="pt-20 py-10" data-aos="slide-down">
 			<PageTitle title="Inventories"></PageTitle>
 			<div className="container mx-auto px-2">
 				<h2 className="text-4xl text-center font-semibold">Inventory</h2>

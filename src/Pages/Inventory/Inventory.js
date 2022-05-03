@@ -71,7 +71,7 @@ const Inventory = () => {
 	};
 
 	return (
-		<section className="py-20">
+		<section className="py-20" data-aos="slide-left">
 			<PageTitle title="Inventory"></PageTitle>
 			<div className="container mx-auto">
 				<div className="grid lg:grid-cols-3 gap-12">

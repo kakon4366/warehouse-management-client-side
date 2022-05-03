@@ -17,7 +17,7 @@ const ManageInventory = () => {
 	const navigate = useNavigate();
 
 	return (
-		<section className="py-20">
+		<section className="py-20" data-aos="slide-down">
 			<PageTitle title="Manage Items"></PageTitle>
 			<div className="container mx-auto px-2">
 				<h2 className="text-3xl text-center">Manage Items</h2>

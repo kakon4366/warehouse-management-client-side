@@ -39,7 +39,7 @@ const SignIn = () => {
 			<PageTitle title="Sign In"></PageTitle>
 			<div className="container mx-auto">
 				<div className="flex justify-center items-center w-full">
-					<div className="w-full mx-2 sm:w-[400px]">
+					<div className="w-full mx-2 sm:w-[400px]" data-aos="zoom-in-up">
 						<form
 							onSubmit={handleSignIn}
 							action=""

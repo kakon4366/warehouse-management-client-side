@@ -3,7 +3,7 @@ import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Blog = () => {
 	return (
-		<section className="py-20">
+		<section className="py-20" data-aos="slide-right">
 			<PageTitle title="Blog"></PageTitle>
 			<div className="container mx-auto">
 				<div className="xl:w-1/2 lg:w-3/4 w-full mx-auto">
@@ -28,7 +28,7 @@ const Blog = () => {
 							them.
 						</p>
 					</div>
-					<div className="bg-green-200 p-4 rounded">
+					<div className="bg-green-200 p-4 rounded mt-6">
 						<h2 className="text-2xl mb-2 italic">
 							When should you use nodejs and when should you use mongodb?
 						</h2>
@@ -45,7 +45,7 @@ const Blog = () => {
 							of the database is to store the data beautifully.
 						</p>
 					</div>
-					<div className="bg-orange-200 p-4 rounded">
+					<div className="bg-orange-200 p-4 rounded mt-6">
 						<h2 className="text-2xl mb-2 italic">
 							Differences between sql and nosql databases?
 						</h2>
@@ -63,7 +63,7 @@ const Blog = () => {
 							query.
 						</p>
 					</div>
-					<div className="bg-green-200 p-4 rounded">
+					<div className="bg-green-200 p-4 rounded mt-6">
 						<h2 className="text-2xl mb-2 italic">
 							What is the purpose of jwt and how does it work?
 						</h2>
