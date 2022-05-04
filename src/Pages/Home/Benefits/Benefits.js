@@ -23,9 +23,9 @@ const Benefits = () => {
 										Fresh Fruits
 									</h3>
 									<p className="text-md">
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Quidem veniam asperiores reiciendis id
-										officiis! Voluptates.
+										Fresh fruit is always good for the body. That's
+										why we always supply fresh fruit to keep its
+										quality right.
 									</p>
 								</div>
 							</div>
@@ -36,9 +36,8 @@ const Benefits = () => {
 								<div>
 									<h3 className="text-xl font-semibold">Chip Price</h3>
 									<p className="text-md">
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Quidem veniam asperiores reiciendis id
-										officiis! Voluptates.
+										We sell the fruits to the buyers at low prices. So
+										that everyone can eat these fruits.
 									</p>
 								</div>
 							</div>
@@ -51,9 +50,8 @@ const Benefits = () => {
 										Integrated Supplier
 									</h3>
 									<p className="text-md">
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Quidem veniam asperiores reiciendis id
-										officiis! Voluptates.
+										We supply fast so that consumers do not have to
+										wait long for fruits.
 									</p>
 								</div>
 							</div>

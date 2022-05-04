@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import footerLogo from "../../../Images/Logo.png";
+import facebook from "../../../Images/facebook.png";
+import linkedin from "../../../Images/linkedin-circle.png";
+import twitter from "../../../Images/twitter.png";
 
 const Footer = () => {
 	const date = new Date();
 	const year = date.getFullYear();
 	return (
-		<footer className="bg-red-600">
+		<footer className="bg-slate-700">
 			<div className="container mx-auto px-2 py-12 md:grid md:grid-cols-4">
 				<div className="col-span-2">
 					<img width="150px" src={footerLogo} alt="footer Logo" />
@@ -60,6 +63,22 @@ const Footer = () => {
 								Blog
 							</Link>
 						</p>
+						<p>
+							<Link
+								className="text-gray-300 hover:text-gray-100"
+								to="/sign-in"
+							>
+								Sign In
+							</Link>
+						</p>
+						<p>
+							<Link
+								className="text-gray-300 hover:text-gray-100"
+								to="/sign-up"
+							>
+								Sign Up
+							</Link>
+						</p>
 					</div>
 				</div>
 				<div className="mt-8 md:mt-0">
@@ -68,11 +87,33 @@ const Footer = () => {
 						<p>1531 Columbia Mine Road</p>
 						<p>WV 26814</p>
 						<p>West Virginia</p>
-						<div></div>
+						<div className="flex mt-4">
+							<a
+								href="https://www.facebook.com/kakon4366/"
+								target="_blank"
+								className="mr-3 transition-all hover:-translate-y-2"
+							>
+								<img width="30px" src={facebook} alt="facebook" />
+							</a>
+							<a
+								href="https://www.linkedin.com/in/kakon-barman/"
+								target="_blank"
+								className="mr-3 transition-all hover:-translate-y-2"
+							>
+								<img width="30px" src={linkedin} alt="linkedin" />
+							</a>
+							<a
+								href="https://twitter.com/kakon_barman"
+								target="_blank"
+								className="mr-3 transition-all hover:-translate-y-2"
+							>
+								<img width="30px" src={twitter} alt="twitter" />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div className="bg-red-800 ">
+			<div className="bg-slate-900 ">
 				<div className="md:flex md:justify-between mditems-center py-4 container mx-auto px-2 ">
 					<div className="flex flex-col md:flex-row order-2 text-center md:text-left">
 						<p>

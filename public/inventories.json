@@ -3,54 +3,90 @@
         "_id": 1,
         "name" : "Mango",
         "price": 29,
-        "quote" : "This is fruits short description here...",
+        "quote" : "The demand for fresh and high quality mangoes is affecting the world.",
         "stock" : 45,
         "suppliername" : "kakon",
-        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+        "img": "https://i.ibb.co/YDMdwCp/Mango.jpg"
     },
     {
         "_id": 2,
-        "name" : "Banana",
+        "name" : "Jackfruit",
         "price": 29,
-        "quote" : "This is fruits short description here...",
+        "quote" : "Jackfruit is in great demand in the world market. We supply good quality jackfruit.",
         "stock" : 45,
         "suppliername" : "kakon",
-        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+        "img": "https://i.ibb.co/bmgPwpJ/Jackfruit.jpg"
     },
     {
         "_id": 3,
         "name" : "Apple",
         "price": 29,
-        "quote" : "This is fruits short description here...",
+        "quote" : "Apples are available twelve months of the year. We bring adulterated free apples to market.",
         "stock" : 45,
         "suppliername" : "kakon",
-        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+        "img": "https://i.ibb.co/Q6vb0KT/Apple.jpg"
     },
     {
         "_id": 4,
         "name" : "Orange",
         "price": 29,
-        "quote" : "This is fruits short description here...",
+        "quote" : "Orange satisfies our hot days. We supply Fresh Orange.",
         "stock" : 45,
         "suppliername" : "kakon",
-        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+        "img": "https://i.ibb.co/w6V1G4F/Orange.jpg"
     },
     {
         "_id": 5,
-        "name" : "Painaple",
+        "name" : "Litchi",
         "price": 29,
-        "quote" : "This is fruits short description here...",
+        "quote" : "Litchi is a fruit of human choice. We supply ripe and fresh litchi in the market.",
         "stock" : 45,
         "suppliername" : "kakon",
-        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+        "img": "https://i.ibb.co/Qmz4VBX/Litchi.jpg"
     },
     {
         "_id": 6,
-        "name" : "Jackfruit",
+        "name" : "Zizyphus",
         "price": 29,
-        "quote" : "This is fruits short description here...",
+        "quote" : "Zizyphus we all eat. We always have Zizyphus in all these different species.",
         "stock" : 45,
         "suppliername" : "kakon",
-        "img": "https://i.ibb.co/qsVVy6D/mango.jpg"
+        "img": "https://i.ibb.co/ZYZ2swp/Col.jpg"
+    },
+    {
+        "_id": 7,
+        "name" : "Pomegranate",
+        "price": 29,
+        "quote" : "Pomegranate is red in color. The small grains inside are fun to eat.",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/r0c7wBL/Pomegranate.jpg"
+    },
+    {
+        "_id": 8,
+        "name" : "Banana",
+        "price": 29,
+        "quote" : "Banana is available throughout the year. We supply different varieties of bananas.",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/hs6k8Sz/Banana.jpg"
+    },
+    {
+        "_id": 9,
+        "name" : "Guava",
+        "price": 29,
+        "quote" : "Guava is a very well known fruit. Ripe and raw guava is everyone's favorite.",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/m9fgLW3/Guava.jpg"
+    },
+    {
+        "_id": 10,
+        "name" : "Papaya",
+        "price": 29,
+        "quote" : "Papaya We continue to eat as vegetables. But ripe papaya is very tasty to eat.",
+        "stock" : 45,
+        "suppliername" : "kakon",
+        "img": "https://i.ibb.co/QjLSMdZ/Papaya.jpg"
     }
 ]

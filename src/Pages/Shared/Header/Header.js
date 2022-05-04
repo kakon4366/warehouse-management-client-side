@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MenuAlt3Icon } from "@heroicons/react/solid";
+import { MenuAlt3Icon, XIcon } from "@heroicons/react/solid";
 import CustomLink from "../CustomLink/CustomLink";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -12,22 +12,23 @@ const Header = () => {
 	const [user] = useAuthState(auth);
 
 	return (
-		<header className="bg-gradient-to-r from-green-500 to-yellow-500 py-5 sticky top-0 z-10 w-full">
+		<header className="bg-green-500 py-5 sticky top-0 z-10 w-full">
 			<div className="container mx-auto px-4">
 				<nav className="flex justify-between items-center text-white">
 					<div className="logo">
 						<img width="80px" src={logo} alt="" />
 					</div>
 					<div className="lg:hidden">
-						<MenuAlt3Icon
-							className="h-6 w-6 "
-							onClick={() => setShowMenu(!showMenu)}
-						>
-							Menu
-						</MenuAlt3Icon>
+						<button onClick={() => setShowMenu(!showMenu)}>
+							{showMenu ? (
+								<XIcon className="h-6 w-6 "></XIcon>
+							) : (
+								<MenuAlt3Icon className="h-6 w-6 "></MenuAlt3Icon>
+							)}
+						</button>
 					</div>
 					<ul
-						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-yellow-600 lg:bg-transparent left-0 w-full lg:w-auto top-24 text-center lg:flex lg:block py-4 z-50 ${
+						className={`text-lg flex flex-col lg:flex-row absolute lg:static bg-green-500 border-t-2 lg:border-0 border-green-600 lg:bg-transparent left-0 w-full lg:w-auto top-24 text-center lg:flex lg:block py-4 z-50 ${
 							showMenu ? "" : "hidden"
 						}`}
 					>

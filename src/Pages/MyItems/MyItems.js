@@ -60,6 +60,11 @@ const MyItems = () => {
 			<div className="container mx-auto">
 				<h2 className="text-3xl text-center mb-8">My Items</h2>
 				<div className="px-2 w-full lg:w-3/4 xl:w-1/2 mx-auto">
+					{myProducts.length > 0 || (
+						<h2 className="text-center text-4xl italic text-gray-500 py-8">
+							Products Not Available
+						</h2>
+					)}
 					{myProducts.map((myProduct) => (
 						<div
 							className="border rounded sm:flex mb-4"
@@ -67,16 +72,16 @@ const MyItems = () => {
 						>
 							<div className="">
 								<img
-									className="sm:w-[222px] w-full rounded"
+									className="w-full rounded"
 									src={myProduct.img}
 									alt=""
 								/>
 							</div>
 							<div className="ml-4 sm:flex justify-between items-center w-full my-3">
 								<div className="text-lg">
-									<h2 className="text-2xl">{myProduct.name}</h2>
-									<p>{myProduct.quote}</p>
-									<h4 className="my-2 text-xl">
+									<h2 className="text-xl">{myProduct.name}</h2>
+									<p className="text-sm">{myProduct.quote}</p>
+									<h4 className="my-2 text-lg">
 										Price: $<span>{myProduct.price}</span>
 										<span className="text-sm"> (per KG)</span>
 									</h4>
@@ -87,7 +92,7 @@ const MyItems = () => {
 										Supplier Name: {myProduct.suppliername}
 									</p>
 								</div>
-								<div className="sm:p-4 mt-2 sm:mt-0">
+								<div className="sm:p-4 mt-2 sm:mt-0 flex">
 									<button
 										onClick={() => {
 											navigate(`/update-item/${myProduct._id}`);
