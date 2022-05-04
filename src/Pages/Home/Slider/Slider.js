@@ -2,10 +2,10 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import slide1 from "../../../Images/slide-1.jpg";
-import slide2 from "../../../Images/slide-2.jpg";
-import slide3 from "../../../Images/slide-3.jpg";
-import slide4 from "../../../Images/slide-4.jpg";
+import slide1 from "../../../Images/slider-img/slide-1.jpg";
+import slide2 from "../../../Images/slider-img/slide-2.jpg";
+import slide3 from "../../../Images/slider-img/slide-3.jpg";
+import slide4 from "../../../Images/slider-img/slide-4.jpg";
 
 const Slider = () => {
 	return (
