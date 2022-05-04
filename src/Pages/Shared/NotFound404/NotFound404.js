@@ -10,7 +10,7 @@ const NotFound404 = () => {
 	return (
 		<section className="py-20 bg-[#F8F7FC]" data-aos="fade-up">
 			<div className="container mx-auto">
-				<div className="grid grid-cols-2">
+				<div className="grid md:grid-cols-2">
 					<div className="flex flex-col justify-center items-center">
 						<h2 className="text-8xl animate-bounce ">404</h2>
 						<h2 className="text-5xl text-orange-500">
@@ -26,7 +26,7 @@ const NotFound404 = () => {
 							Go to Home
 						</button>
 					</div>
-					<div>
+					<div className="mt-6 md:mt-0">
 						<img className="w-full mx-auto" src={fruitsBasket} alt="" />
 					</div>
 				</div>
